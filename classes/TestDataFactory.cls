@@ -149,25 +149,25 @@ public with sharing class TestDataFactory {
     public static void InsertTestData(Integer cnt){
         //ToDo: Ensure this method calls each of the construct methods
         //  and inserts the results for use as test data.
-        CollaborationGroup groups = TestDataFactory.ConstructCollaborationGroup();
+        CollaborationGroup groups = ConstructCollaborationGroup();
         insert groups;
         
-        List<Product2>  products= TestDataFactory.ConstructProducts(cnt);
+        List<Product2>  products= ConstructProducts(cnt);
         insert products;
         
-        List<PriceBookEntry> entries = TestDataFactory.ConstructPricebookEntries(products);
+        List<PriceBookEntry> entries = ConstructPricebookEntries(products);
         insert entries;
         
-        List<Account> accts = TestDataFactory.ConstructAccounts(cnt);
+        List<Account> accts = ConstructAccounts(cnt);
         insert accts;
         
-        List<Contact> contacts = TestDataFactory.ConstructContacts(cnt,accts);
+        List<Contact> contacts = ConstructContacts(cnt,accts);
         insert contacts;
         
-        List<Order> orders = TestDataFactory.ConstructOrders( cnt,  accts);
+        List<Order> orders = ConstructOrders( cnt,  accts);
         insert orders;
         
-        List<OrderItem> items = TestDataFactory.ConstructOrderItems(cnt, entries, orders);
+        List<OrderItem> items = ConstructOrderItems(cnt, entries, orders);
         insert items;
         
     }
